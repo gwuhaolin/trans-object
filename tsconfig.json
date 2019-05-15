@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es5",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "lib": ["esnext"]
   },
   "exclude": [
     "node_modules"
