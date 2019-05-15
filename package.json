@@ -1,6 +1,7 @@
 {
   "name": "trans-object",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "typings": "index",
   "scripts": {
     "prepublishOnly": "tsc"
   }
