@@ -1,10 +1,15 @@
+export interface IV {
+  [id: number]: any;
+  [id: string]: any;
+}
+
 /**
  * 对obj做转换的工具函数
  */
 class TransObject {
-  private value: object = {};
+  private value: IV = {};
 
-  constructor(obj: object) {
+  constructor(obj: IV) {
     this.value = Object.assign({}, obj);
   }
 
@@ -88,7 +93,7 @@ class TransObject {
   /**
    * 合并额外的obj
    */
-  merge(...objs: Array<TransObject | object>): TransObject {
+  merge(...objs: Array<TransObject | IV>): TransObject {
     objs.forEach(obj => {
       if (obj instanceof TransObject) {
         Object.assign(this.value, obj.value);
@@ -108,6 +113,6 @@ class TransObject {
   }
 }
 
-export default function transObject(obj: object) {
+export default function transObject(obj: IV) {
   return new TransObject(obj);
 }
